@@ -1,7 +1,7 @@
 import inventory from '@/data/products.json'
-import { NextApiRequest, NextApiResponse } from 'next'
+import {NextApiRequest, NextApiResponse} from 'next'
 import Stripe from 'stripe'
-import { validateCartItems } from 'use-shopping-cart/src/serverUtil'
+import {validateCartItems} from 'use-shopping-cart/src/serverUtil'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '', {
   // https://github.com/stripe/stripe-node#configuration

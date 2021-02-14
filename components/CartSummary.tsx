@@ -1,7 +1,6 @@
-import StripeTestCards from '@/components/StripeTestCards'
-import { fetchPostJSON } from '@/utils/api-helpers'
-import React, { useEffect, useState } from 'react'
-import { useShoppingCart } from 'use-shopping-cart'
+import {fetchPostJSON} from '@/utils/api-helpers'
+import React, {useEffect, useState} from 'react'
+import {useShoppingCart} from 'use-shopping-cart'
 
 export default function CartSummary(): JSX.Element {
   const [loading, setLoading] = useState(false)
@@ -40,14 +39,13 @@ export default function CartSummary(): JSX.Element {
       <h2>Cart summary</h2>
       {/* This is where we'll render our cart */}
       <p suppressHydrationWarning>
-        <strong>Number of Items:</strong> {cartCount}
+        <strong>Number of Bernie&apos;s:</strong> {cartCount}
       </p>
       <p suppressHydrationWarning>
         <strong>Total:</strong> {formattedTotalPrice}
       </p>
 
       {/* Redirects the user to Stripe */}
-      <StripeTestCards />
       <button
         className="cart-style-background"
         type="submit"

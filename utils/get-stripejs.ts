@@ -1,4 +1,4 @@
-import { loadStripe, Stripe } from '@stripe/stripe-js'
+import {loadStripe, Stripe} from '@stripe/stripe-js'
 
 let stripePromise: Promise<Stripe | null>
 export default function getStripe(): Promise<Stripe | null> {
@@ -7,4 +7,3 @@ export default function getStripe(): Promise<Stripe | null> {
   }
   return stripePromise
 }
-

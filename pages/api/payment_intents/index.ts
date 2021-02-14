@@ -1,6 +1,6 @@
-import { CURRENCY, MAX_AMOUNT, MIN_AMOUNT } from '@/config/index'
-import { formatAmountForStripe } from '@/utils/stripe-helpers'
-import { NextApiRequest, NextApiResponse } from 'next'
+import {CURRENCY, MAX_AMOUNT, MIN_AMOUNT} from '@/config/index'
+import {formatAmountForStripe} from '@/utils/stripe-helpers'
+import {NextApiRequest, NextApiResponse} from 'next'
 import Stripe from 'stripe'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '', {
