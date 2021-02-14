@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 
-import CustomDonationInput from '../components/CustomDonationInput'
-import StripeTestCards from '../components/StripeTestCards'
-import PrintObject from '../components/PrintObject'
+import StripeTestCards from '@/components/StripeTestCards'
+import PrintObject from '@/components/PrintObject'
 
-import { fetchPostJSON } from '../utils/api-helpers'
-import { formatAmountForDisplay } from '../utils/stripe-helpers'
-import * as config from '../config'
+import { fetchPostJSON } from '@/utils/api-helpers'
+import { formatAmountForDisplay } from '@/utils/stripe-helpers'
+import * as config from '@/config/index'
 
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 
@@ -121,16 +120,6 @@ const ElementsForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <CustomDonationInput
-          className="elements-style"
-          name="customDonation"
-          value={input.customDonation}
-          min={config.MIN_AMOUNT}
-          max={config.MAX_AMOUNT}
-          step={config.AMOUNT_STEP}
-          currency={config.CURRENCY}
-          onChange={handleInputChange}
-        />
         <StripeTestCards />
         <fieldset className="elements-style">
           <legend>Your payment details:</legend>
