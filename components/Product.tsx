@@ -1,33 +1,30 @@
 import products from '@/data/products.json'
+import Image from 'next/image'
 import {formatCurrencyString, useShoppingCart} from 'use-shopping-cart'
 
 export default function Product(): JSX.Element {
   const {addItem, removeItem} = useShoppingCart()
 
   return (
-    <section className="products">
+    <section>
       {products.map((product) => (
         <div key={product.sku} className="product">
-          <img src={product.image} alt={product.name} />
-          <h2>{product.name}</h2>
-          <p className="price">
+          <h2 className="text-gray-400 text-base">{product.name}</h2>
+          <Image
+            alt={product.name}
+            height="777"
+            layout="responsive"
+            src={`/${product.image}`}
+            width="720"
+          />
+          <p className="text-gray-500 text-3xl">
             {formatCurrencyString({
               value: product.price,
               currency: product.currency
             })}
           </p>
-          <button
-            className="cart-style-background"
-            onClick={() => addItem(product)}
-          >
-            Add to cart
-          </button>
-          <button
-            className="cart-style-background"
-            onClick={() => removeItem(product.sku)}
-          >
-            Remove
-          </button>
+          <p className="text-gray-400 text-md">{product.description}</p>
+
         </div>
       ))}
     </section>
