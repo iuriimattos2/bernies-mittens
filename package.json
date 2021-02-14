@@ -1,30 +1,48 @@
 {
-  "name": "with-stripe-typescript",
+  "name": "bernies-mittens",
   "version": "2.0.0",
-  "description": "Full-stack TypeScript example using Next.js, react-stripe-js, and stripe-node.",
+  "description": "Selling Bernie's Mittens",
   "scripts": {
-    "dev": "next",
     "build": "next build",
+    "clean": "rm -rf .next",
+    "dev": "npm run clean && next",
+    "format": "npx prettier --config=prettier.config.js '**/*.{js,jsx,ts,tsx,md,html,css,scss,json}' --write || true",
+    "lint": "yarn format && yarn lint:js && yarn lint:css",
+    "lint:css": "npx stylelint --config=stylelint.config.js '**/*.css' --fix || true",
+    "lint:js": "npx eslint --config=.eslintrc.js ./ --fix || true",
     "start": "next start"
   },
   "license": "MIT",
   "dependencies": {
-    "@stripe/react-stripe-js": "1.1.2",
-    "@stripe/stripe-js": "1.5.0",
+    "@stripe/react-stripe-js": "1.2.2",
+    "@stripe/stripe-js": "1.12.1",
     "micro": "^9.3.4",
     "micro-cors": "^0.1.1",
     "next": "latest",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "stripe": "8.56.0",
-    "swr": "^0.1.16",
-    "use-shopping-cart": "2.1.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "stripe": "8.135.0",
+    "swr": "^0.4.2",
+    "use-shopping-cart": "2.4.1"
   },
   "devDependencies": {
     "@types/micro": "^7.3.3",
-    "@types/micro-cors": "^0.1.0",
-    "@types/node": "^13.1.2",
-    "@types/react": "^16.9.17",
-    "typescript": "^3.7.4"
+    "@types/micro-cors": "^0.1.1",
+    "@types/node": "^14.14.27",
+    "@types/react": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "stylelint": "^13.10.0",
+    "stylelint-config-standard": "^20.0.0",
+    "typescript": "^4.1.5"
   }
 }
