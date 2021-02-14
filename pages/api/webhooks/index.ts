@@ -3,12 +3,12 @@ import Cors from 'micro-cors'
 import { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '', {
   // https://github.com/stripe/stripe-node#configuration
   apiVersion: '2020-08-27'
 })
 
-const webhookSecret: string = process.env.STRIPE_WEBHOOK_SECRET!
+const webhookSecret: string = process.env.STRIPE_WEBHOOK_SECRET ?? ''
 
 // Stripe requires the raw body to construct the event.
 export const config = {
@@ -24,7 +24,7 @@ const cors = Cors({
 const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const buf = await buffer(req)
-    const sig = req.headers['stripe-signature']!
+    const sig = req.headers['stripe-signature'] ?? ''
 
     let event: Stripe.Event
 
