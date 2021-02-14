@@ -3,7 +3,7 @@
   --body-color: #fcfdfe;
   --checkout-color: #8f6ed5;
   --elements-color: #6772e5;
-  --body-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  --body-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
     sans-serif;
   --h1-color: #1a1f36;
   --h2-color: #7b818a;
@@ -113,11 +113,13 @@ li {
   width: 33%;
   margin: 0 20px 20px 0;
   text-decoration: none;
-  box-shadow: -20px 20px 60px #abacad, 20px -20px 60px #ffffff;
+  box-shadow: -20px 20px 60px #abacad, 20px -20px 60px #fff;
 }
+
 .card h2 {
   color: #fff;
 }
+
 .card h2.bottom {
   position: absolute;
   bottom: 10px;
@@ -166,6 +168,7 @@ button {
   display: block;
   width: 100%;
 }
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -175,28 +178,35 @@ button:disabled {
   color: var(--elements-color);
   border: 1px solid var(--elements-color);
 }
+
 .elements-style-background {
   background: var(--elements-color);
   transition: box-shadow var(--transition-duration);
 }
+
 .card.elements-style-background:hover {
   box-shadow: 20px 20px 60px #464e9c, -20px -20px 60px #8896ff;
 }
+
 .checkout-style {
   color: var(--checkout-color);
   border: 1px solid var(--checkout-color);
 }
+
 .checkout-style-background {
   background: var(--checkout-color);
   transition: box-shadow var(--transition-duration);
 }
+
 .card.checkout-style-background:hover {
   box-shadow: 20px 20px 60px #614b91, -20px -20px 60px #bd91ff;
 }
+
 .cart-style-background {
   background: teal;
   transition: box-shadow var(--transition-duration);
 }
+
 .card.cart-style-background:hover {
   box-shadow: 20px 20px 60px teal, -20px -20px 60px teal;
 }
@@ -218,9 +228,10 @@ button:disabled {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
+
 .card-number {
   display: inline;
   white-space: nowrap;
@@ -228,6 +239,7 @@ button:disabled {
   color: #3c4257;
   font-weight: 500;
 }
+
 .card-number span {
   display: inline-block;
   width: 4px;
@@ -253,7 +265,7 @@ pre {
   background: var(--body-color);
   color: #6a7c94;
   border-radius: 50px;
-  box-shadow: -20px 20px 60px #abacad, 20px -20px 60px #ffffff;
+  box-shadow: -20px 20px 60px #abacad, 20px -20px 60px #fff;
   display: flex;
   align-items: center;
   box-sizing: border-box;

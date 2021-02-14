@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import {NextPage} from 'next'
 import Layout from '@/components/Layout'
 
 import Cart from '@/components/Cart'

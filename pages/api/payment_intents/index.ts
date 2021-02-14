@@ -1,12 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import {NextApiRequest, NextApiResponse} from 'next'
 
-import { CURRENCY, MIN_AMOUNT, MAX_AMOUNT } from '../../../config'
-import { formatAmountForStripe } from '../../../utils/stripe-helpers'
+import {CURRENCY, MIN_AMOUNT, MAX_AMOUNT} from '../../../config'
+import {formatAmountForStripe} from '../../../utils/stripe-helpers'
 
 import Stripe from 'stripe'
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   // https://github.com/stripe/stripe-node#configuration
-  apiVersion: '2020-08-27',
+  apiVersion: '2020-08-27'
 })
 
 export default async function handler(
@@ -14,7 +14,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const { amount }: { amount: number } = req.body
+    const {amount}: {amount: number} = req.body
     try {
       // Validate the amount that was passed from the client.
       if (!(amount >= MIN_AMOUNT && amount <= MAX_AMOUNT)) {
@@ -25,7 +25,7 @@ export default async function handler(
         payment_method_types: ['card'],
         amount: formatAmountForStripe(amount, CURRENCY),
         currency: CURRENCY,
-        description: process.env.STRIPE_PAYMENT_DESCRIPTION ?? '',
+        description: process.env.STRIPE_PAYMENT_DESCRIPTION ?? ''
       }
       const payment_intent: Stripe.PaymentIntent = await stripe.paymentIntents.create(
         params
@@ -33,7 +33,7 @@ export default async function handler(
 
       res.status(200).json(payment_intent)
     } catch (err) {
-      res.status(500).json({ statusCode: 500, message: err.message })
+      res.status(500).json({statusCode: 500, message: err.message})
     }
   } else {
     res.setHeader('Allow', 'POST')

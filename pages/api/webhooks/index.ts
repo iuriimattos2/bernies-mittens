@@ -1,11 +1,11 @@
-import { buffer } from 'micro'
+import {buffer} from 'micro'
 import Cors from 'micro-cors'
-import { NextApiRequest, NextApiResponse } from 'next'
+import {NextApiRequest, NextApiResponse} from 'next'
 
 import Stripe from 'stripe'
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   // https://github.com/stripe/stripe-node#configuration
-  apiVersion: '2020-08-27',
+  apiVersion: '2020-08-27'
 })
 
 const webhookSecret: string = process.env.STRIPE_WEBHOOK_SECRET!
@@ -13,12 +13,12 @@ const webhookSecret: string = process.env.STRIPE_WEBHOOK_SECRET!
 // Stripe requires the raw body to construct the event.
 export const config = {
   api: {
-    bodyParser: false,
-  },
+    bodyParser: false
+  }
 }
 
 const cors = Cors({
-  allowMethods: ['POST', 'HEAD'],
+  allowMethods: ['POST', 'HEAD']
 })
 
 const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -57,7 +57,7 @@ const webhookHandler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     // Return a response to acknowledge receipt of the event.
-    res.json({ received: true })
+    res.json({received: true})
   } else {
     res.setHeader('Allow', 'POST')
     res.status(405).end('Method Not Allowed')

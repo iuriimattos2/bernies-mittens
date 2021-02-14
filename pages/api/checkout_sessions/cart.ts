@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import {NextApiRequest, NextApiResponse} from 'next'
 
 /*
  * Product data can be loaded from anywhere. In this case, we’re loading it from
@@ -8,13 +8,13 @@ import { NextApiRequest, NextApiResponse } from 'next'
  * The important thing is that the product info is loaded from somewhere trusted
  * so you know the pricing information is accurate.
  */
-import { validateCartItems } from 'use-shopping-cart/src/serverUtil'
+import {validateCartItems} from 'use-shopping-cart/src/serverUtil'
 import inventory from '../../../data/products.json'
 
 import Stripe from 'stripe'
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   // https://github.com/stripe/stripe-node#configuration
-  apiVersion: '2020-08-27',
+  apiVersion: '2020-08-27'
 })
 
 export default async function handler(
@@ -32,11 +32,11 @@ export default async function handler(
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
         shipping_address_collection: {
-          allowed_countries: ['US', 'CA'],
+          allowed_countries: ['US', 'CA']
         },
         line_items,
         success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/use-shopping-cart`,
+        cancel_url: `${req.headers.origin}/use-shopping-cart`
       }
       const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(
         params
@@ -44,7 +44,7 @@ export default async function handler(
 
       res.status(200).json(checkoutSession)
     } catch (err) {
-      res.status(500).json({ statusCode: 500, message: err.message })
+      res.status(500).json({statusCode: 500, message: err.message})
     }
   } else {
     res.setHeader('Allow', 'POST')

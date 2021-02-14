@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, {ReactNode} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -9,7 +9,7 @@ type Props = {
 
 const Layout = ({
   children,
-  title = 'TypeScript Next.js Stripe Example',
+  title = 'TypeScript Next.js Stripe Example'
 }: Props) => (
   <>
     <Head>
