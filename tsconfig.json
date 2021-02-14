@@ -5,6 +5,7 @@
       "@/components/*": ["components/*"],
       "@/config/*": ["config/*"],
       "@/data/*": ["data/*"],
+      "@/styles/*": ["styles/*"],
       "@/utils/*": ["utils/*"]
     },
     "target": "es5",
