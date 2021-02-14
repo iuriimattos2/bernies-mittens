@@ -1,7 +1,7 @@
 import products from '@/data/products.json'
 import {useShoppingCart, formatCurrencyString} from 'use-shopping-cart'
 
-const Products = () => {
+export default function Products(): JSX.Element {
   const {addItem, removeItem} = useShoppingCart()
 
   return (
@@ -33,5 +33,3 @@ const Products = () => {
     </section>
   )
 }
-
-export default Products

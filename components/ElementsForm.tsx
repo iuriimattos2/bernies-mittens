@@ -1,13 +1,10 @@
-import React, {useState} from 'react'
-
-import StripeTestCards from '@/components/StripeTestCards'
 import PrintObject from '@/components/PrintObject'
-
-import {fetchPostJSON} from '@/utils/api-helpers'
-import {formatAmountForDisplay} from '@/utils/stripe-helpers'
+import StripeTestCards from '@/components/StripeTestCards'
 import * as config from '@/config/index'
-
-import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js'
+import { fetchPostJSON } from '@/utils/api-helpers'
+import { formatAmountForDisplay } from '@/utils/stripe-helpers'
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
+import React, { useState } from 'react'
 
 const CARD_OPTIONS = {
   iconStyle: 'solid' as const,
@@ -33,7 +30,7 @@ const CARD_OPTIONS = {
   }
 }
 
-const ElementsForm = () => {
+export default function ElementsForm(): JSX.Element {
   const [input, setInput] = useState({
     customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
     cardholderName: ''
@@ -159,5 +156,3 @@ const ElementsForm = () => {
     </>
   )
 }
-
-export default ElementsForm

@@ -1,17 +1,8 @@
-import {NextApiRequest, NextApiResponse} from 'next'
-
-/*
- * Product data can be loaded from anywhere. In this case, we’re loading it from
- * a local JSON file, but this could also come from an async call to your
- * inventory management service, a database query, or some other API call.
- *
- * The important thing is that the product info is loaded from somewhere trusted
- * so you know the pricing information is accurate.
- */
-import {validateCartItems} from 'use-shopping-cart/src/serverUtil'
-import inventory from '../../../data/products.json'
-
+import inventory from '@/data/products.json'
+import { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
+import { validateCartItems } from 'use-shopping-cart/src/serverUtil'
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   // https://github.com/stripe/stripe-node#configuration
   apiVersion: '2020-08-27'

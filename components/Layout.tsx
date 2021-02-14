@@ -7,10 +7,11 @@ type Props = {
   title?: string
 }
 
-const Layout = ({
+export default function Layout({
   children,
   title = 'TypeScript Next.js Stripe Example'
-}: Props) => (
+}: Props): JSX.Element {
+  return (
   <>
     <Head>
       <title>{title}</title>
@@ -67,6 +68,5 @@ const Layout = ({
       </span>
     </div>
   </>
-)
-
-export default Layout
+ )
+}

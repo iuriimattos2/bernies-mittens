@@ -1,9 +1,10 @@
-import React, {ReactNode} from 'react'
-import {CartProvider} from 'use-shopping-cart'
-import getStripe from '@/utils/get-stripejs'
 import * as config from '@/config/index'
+import getStripe from '@/utils/get-stripejs'
+import React, { ReactNode } from 'react'
+import { CartProvider } from 'use-shopping-cart'
 
-const Cart = ({children}: {children: ReactNode}) => (
+export default function Cart ({children}: {children: ReactNode}): JSX.Element {
+  return (
   <CartProvider
     mode="checkout-session"
     stripe={getStripe()}
@@ -11,6 +12,5 @@ const Cart = ({children}: {children: ReactNode}) => (
   >
     <>{children}</>
   </CartProvider>
-)
-
-export default Cart
+  )
+}

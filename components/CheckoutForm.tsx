@@ -1,13 +1,11 @@
-import React, {useState} from 'react'
-
 import StripeTestCards from '@/components/StripeTestCards'
-
-import getStripe from '@/utils/get-stripejs'
-import {fetchPostJSON} from '@/utils/api-helpers'
-import {formatAmountForDisplay} from '@/utils/stripe-helpers'
 import * as config from '@/config/index'
+import { fetchPostJSON } from '@/utils/api-helpers'
+import getStripe from '@/utils/get-stripejs'
+import { formatAmountForDisplay } from '@/utils/stripe-helpers'
+import React, { useState } from 'react'
 
-const CheckoutForm = () => {
+export default function CheckoutForm(): JSX.Element {
   const [loading, setLoading] = useState(false)
   const [input, setInput] = useState({
     customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP)
@@ -60,5 +58,3 @@ const CheckoutForm = () => {
     </form>
   )
 }
-
-export default CheckoutForm

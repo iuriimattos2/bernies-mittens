@@ -4,9 +4,8 @@ type Props = {
   content: object
 }
 
-const PrintObject = ({content}: Props) => {
+export default function PrintObject({content}: Props): JSX.Element {
   const formattedContent: string = JSON.stringify(content, null, 2)
   return <pre>{formattedContent}</pre>
 }
 
-export default PrintObject
