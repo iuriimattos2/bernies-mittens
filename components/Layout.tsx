@@ -1,3 +1,4 @@
+import {SITE_DESCRIPTION, SITE_NAME} from '@/config/index'
 import React, {ReactNode} from 'react'
 import Footer from './Footer'
 import Header from './Header'
@@ -11,8 +12,8 @@ type Props = {
 
 export default function Layout({
   children,
-  title = "Crochet Bernie's Mittens Doll - $75.00",
-  description = "America's favorite grumpy senator is ready for a busy day running to the post office, attending Joe's inauguration, and saving our democracy in his stylish green jacket, up-cycled mittens, and mask!"
+  title = SITE_NAME,
+  description = SITE_DESCRIPTION
 }: Props): JSX.Element {
   return (
     <>
