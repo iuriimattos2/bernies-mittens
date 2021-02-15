@@ -1,11 +1,10 @@
 import Layout from '@/components/Layout'
 import Success from '@/components/Success'
 import {fetchGetJSON} from '@/utils/api-helpers'
-import {NextPage} from 'next'
 import {useRouter} from 'next/router'
 import useSWR from 'swr'
 
-const ResultPage: NextPage = () => {
+export default function ResultPage(): JSX.Element {
   const router = useRouter()
 
   // Fetch CheckoutSession from static page via
@@ -17,25 +16,20 @@ const ResultPage: NextPage = () => {
     fetchGetJSON
   )
 
-  if (error || data?.statusCode === 500)
-    return (
-      <Layout>
-        <p className="text-red-700">
-          Oh no! Something went wrong.{' '}
-          <a className="underline" href="/">
-            Please try again.
-          </a>
-        </p>
-      </Layout>
-    )
-
   return (
     <Layout>
-      <section className="py-16 space-y-4 w-80">
+      <section className="space-y-8 w-80">
+        {error ||
+          (data?.statusCode === 500 && (
+            <p className="text-red-700">
+              Oh no! Something went wrong.{' '}
+              <a className="underline" href="/">
+                Please try again.
+              </a>
+            </p>
+          ))}
         {data?.payment_intent?.status === 'succeeded' && <Success {...data} />}
       </section>
     </Layout>
   )
 }
-
-export default ResultPage
