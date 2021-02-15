@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout'
+import Success from '@/components/Success'
 import {fetchGetJSON} from '@/utils/api-helpers'
 import {NextPage} from 'next'
 import {useRouter} from 'next/router'
@@ -16,15 +17,23 @@ const ResultPage: NextPage = () => {
     fetchGetJSON
   )
 
-  if (error) return <div>failed to load</div>
+  if (error)
+    return (
+      <Layout>
+        <p className="text-red-700">
+          Oh no! Something went wrong.{' '}
+          <a className="underline" href="/">
+            Please try again.
+          </a>
+        </p>
+      </Layout>
+    )
 
   return (
     <Layout>
-      <div className="page-container">
-        <h1>Checkout Payment Result</h1>
-        <h2>Status: {data?.payment_intent?.status ?? 'loading...'}</h2>
-        <h3>CheckoutSession response:</h3>
-      </div>
+      <section className="py-16 space-y-4 w-80">
+        {data?.payment_intent?.status === 'succeeded' && <Success {...data} />}
+      </section>
     </Layout>
   )
 }
