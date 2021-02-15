@@ -9,6 +9,18 @@ button,
   }
 }
 
+.share {
+  @apply py-1 px-4 rounded text-white text-xs;
+}
+
+.tweet {
+  background-color: #1b95e0;
+}
+
+.facebook {
+  background-color: #1877f2;
+}
+
 svg.loading {
   animation: 2s linear infinite svg-animation;
   height: 15px;
