@@ -14,6 +14,9 @@ module.exports = {
         purple: {
           500: '#8e66a3'
         }
+      },
+      outline: {
+        purple: ['2px solid #8e66a333']
       }
     }
   },
