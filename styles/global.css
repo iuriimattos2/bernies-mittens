@@ -1,3 +1,10 @@
-button {
-  @apply bg-purple-500 text-gray-200 py-2 px-8 rounded;
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  @apply bg-purple-500 text-white py-4 px-8 rounded w-full focus:outline-purple;
+
+  &:disabled {
+    @apply text-gray-300;
+  }
 }
