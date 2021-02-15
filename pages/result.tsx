@@ -1,5 +1,3 @@
-import Cart from '@/components/Cart'
-import ClearCart from '@/components/ClearCart'
 import Layout from '@/components/Layout'
 import {fetchGetJSON} from '@/utils/api-helpers'
 import {NextPage} from 'next'
@@ -26,9 +24,6 @@ const ResultPage: NextPage = () => {
         <h1>Checkout Payment Result</h1>
         <h2>Status: {data?.payment_intent?.status ?? 'loading...'}</h2>
         <h3>CheckoutSession response:</h3>
-        <Cart>
-          <ClearCart />
-        </Cart>
       </div>
     </Layout>
   )
