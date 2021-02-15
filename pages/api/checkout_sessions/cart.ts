@@ -1,7 +1,7 @@
-import inventory from '@/data/products.json'
-import {NextApiRequest, NextApiResponse} from 'next'
+import inventory from '@/data/product.json'
+import { NextApiRequest, NextApiResponse } from 'next'
 import Stripe from 'stripe'
-import {validateCartItems} from 'use-shopping-cart/src/serverUtil'
+import { validateCartItems } from 'use-shopping-cart/src/serverUtil'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? '', {
   // https://github.com/stripe/stripe-node#configuration
@@ -16,7 +16,7 @@ export default async function handler(
     try {
       // Validate the cart details that were sent from the client.
       const cartItems = req.body
-      const line_items = validateCartItems(inventory, cartItems)
+      const line_items = validateCartItems([inventory], cartItems)
       // Create Checkout Sessions from body params.
       const params: Stripe.Checkout.SessionCreateParams = {
         mode: 'payment',
