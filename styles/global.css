@@ -2,16 +2,10 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  @apply bg-purple-500 text-white py-4 px-8 rounded w-full focus:outline-purple;
-
-  transition: color 0.3s ease-in-out;
-
-  &:active {
-    @apply text-gray-300;
-  }
+  @apply bg-purple-500 text-white text-base py-2 rounded w-full focus:outline-purple;
 
   &:disabled {
-    @apply text-gray-300;
+    @apply opacity-60 text-gray-300;
   }
 }
 

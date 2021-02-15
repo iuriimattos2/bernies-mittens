@@ -20,12 +20,12 @@ export default function Layout({
     <>
       <Meta title={title} description={description} />
       <main className="flex flex-col lg:flex-row justify-center items-center h-screen w-screen overflow-auto">
-        <div className="flex flex-col p-16 space-y-8 justify-center items-center h-screen lg:w-1/2 bg-gray-200 shadow-inner">
+        <div className="flex flex-col p-16 space-y-8 items-center h-screen lg:w-1/2 bg-gray-200 shadow-inner">
           <Header />
           <Product />
           <Footer />
         </div>
-        <div className="flex flex-col space-y-4 justify-center items-center lg:w-1/2">
+        <div className="flex flex-col justify-start items-center lg:w-1/2">
           {children}
         </div>
       </main>
