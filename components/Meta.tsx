@@ -18,13 +18,13 @@ export default function Meta({title, description}: Props): JSX.Element {
       <meta property="og:url" content={SITE_URL} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image" content={`${SITE_URL}/${OG_IMAGE}`} />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={SITE_URL} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={OG_IMAGE} />
+      <meta property="twitter:image" content={`${SITE_URL}/${OG_IMAGE}`} />
     </Head>
   )
 }
