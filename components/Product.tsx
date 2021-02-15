@@ -9,12 +9,12 @@ export default function Product(): JSX.Element {
       <h2 className="text-gray-400 text-3xl">
         <Link href="/">{product.name}</Link>
       </h2>
-      <p className="text-gray-500 text-3xl">
+      <h3 className="text-gray-500 text-2xl">
         {formatCurrencyString({
           value: product.price,
           currency: product.currency
         })}
-      </p>
+      </h3>
       <div>
         <Image
           alt={product.name}
