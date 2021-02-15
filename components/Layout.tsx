@@ -5,7 +5,7 @@ import Header from './Header'
 import Meta from './Meta'
 import Product from './Product'
 
-type Props = {
+interface Props {
   children: ReactNode
   description?: string
   title?: string

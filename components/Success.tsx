@@ -1,7 +1,19 @@
 import {SITE_URL} from '@/config/index'
 
-type Props = {
-  data?: object
+interface Props {
+  customer_details: {
+    email: string
+  }
+  shipping: {
+    address: {
+      line1: string
+      line2: string
+      city: string
+      state: string
+      postal_code: string
+    }
+    name: string
+  }
 }
 
 export default function Success(data: Props): JSX.Element {
