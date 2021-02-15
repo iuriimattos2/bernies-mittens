@@ -19,13 +19,13 @@ export default function Layout({
   return (
     <>
       <Meta title={title} description={description} />
-      <main className="flex flex-col lg:flex-row justify-center items-center h-screen w-screen overflow-auto">
-        <div className="flex flex-col p-16 space-y-8 items-center h-screen lg:w-1/2 bg-gray-200 shadow-inner">
+      <main className="flex flex-col lg:flex-row justify-center items-center lg:h-screen lg:w-screen">
+        <div className="flex flex-col p-16 space-y-8 items-center bg-gray-200 shadow-inner lg:h-screen w-full lg:w-1/2 ">
           <Header />
           <Product />
           <Footer />
         </div>
-        <div className="flex flex-col justify-start items-center lg:w-1/2">
+        <div className="flex flex-col justify-start items-center pb-24 lg:pb-0 w-full lg:w-1/2">
           {children}
         </div>
       </main>
