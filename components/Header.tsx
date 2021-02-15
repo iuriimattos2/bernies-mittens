@@ -1,4 +1,4 @@
-import {SITE_NAME} from '../config/index'
+import {SITE_NAME} from '@/config/index'
 
 export default function Header(): JSX.Element {
   return (
