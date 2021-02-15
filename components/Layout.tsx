@@ -25,7 +25,7 @@ export default function Layout({
           <Product />
           <Footer />
         </div>
-        <div className="flex flex-col justify-start items-center pb-16 lg:pb-0 w-full lg:w-1/2">
+        <div className="flex flex-col justify-start items-center p-8 w-full lg:w-1/2">
           {children}
         </div>
       </main>

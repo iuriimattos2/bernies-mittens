@@ -18,7 +18,7 @@ interface Props {
 
 export default function Success(data: Props): JSX.Element {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 py-4">
       <h2 className="text-purple-400 text-3xl">Payment Successful</h2>
       <p>A receipt has been emailed to {data?.customer_details?.email}.</p>
       <details>

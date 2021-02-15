@@ -38,7 +38,7 @@ export default function CartSummary(): JSX.Element {
 
   return (
     <>
-      <div className="space-y-8 pt-16 h-48 w-80">
+      <div className="space-y-8 lg:h-48 w-80">
         <button onClick={() => addItem(product)}>Add to Cart</button>
         <form className="w-full" onSubmit={handleCheckout}>
           <button
