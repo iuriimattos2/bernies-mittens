@@ -17,7 +17,7 @@ const ResultPage: NextPage = () => {
     fetchGetJSON
   )
 
-  if (error)
+  if (error || data?.statusCode === 500)
     return (
       <Layout>
         <p className="text-red-700">
