@@ -39,7 +39,7 @@ export default function CartSummary(): JSX.Element {
   return (
     <>
       <div className="flex flex-col items-center space-y-8 h-48 w-64">
-        <button onClick={() => addItem(product)}>Add to cart</button>
+        <button onClick={() => addItem(product)}>Add to Cart</button>
         <form className="w-full" onSubmit={handleCheckout}>
           <button
             className="flex justify-center items-center"
@@ -68,6 +68,7 @@ export default function CartSummary(): JSX.Element {
               })}
             </p>
             <button className="bg-transparent w-5 p-1" onClick={clearCart}>
+              <span className="sr-only">Click to clear cart</span>
               <svg
                 className="fill-current text-gray-400"
                 height="15"
