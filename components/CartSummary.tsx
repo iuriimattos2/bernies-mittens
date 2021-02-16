@@ -42,7 +42,7 @@ export default function CartSummary(): JSX.Element {
         <button onClick={() => addItem(product)}>Add to Cart</button>
         <form className="w-full" onSubmit={handleCheckout}>
           <button
-            className="flex justify-center items-center"
+            className="flex justify-center items-center shimmer"
             type="submit"
             disabled={cartEmpty}
           >

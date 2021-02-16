@@ -67,3 +67,23 @@ circle {
     transform: rotate(360deg);
   }
 }
+
+.shimmer {
+  animation: shimmer 5s infinite linear;
+  background: linear-gradient(-45deg, #8e66a37a, #8e66a3);
+  background-size: 200% 200%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
