@@ -6,7 +6,7 @@ https://bernsmittens.com/
 
 ## Table of Contents <!-- omit in toc -->
 - [Introduction 🎓](#introduction-)
-- [Requirements](#requirements)
+- [Requirements 📝](#requirements-)
 - [Development 💻](#development-)
   - [Install](#install)
   - [ENV Vars](#env-vars)
@@ -33,10 +33,10 @@ Based on the following:
 - https://dev.to/thorwebdev/type-safe-payments-with-next-js-typescript-and-stripe-4jo7
 - https://github.com/vercel/next.js/tree/master/examples/with-stripe-typescript
 
-## Requirements
+## Requirements 📝
 
-- A Stripe account with at least one product
-- A hosting account on Vercel
+- A [Stripe](https://stripe.com) account with at least one product
+- A hosting account on [Vercel](https://vercel.com)
 
 ---
 
