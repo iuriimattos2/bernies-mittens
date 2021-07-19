@@ -25,7 +25,7 @@
     "use-shopping-cart": "2.4.3"
   },
   "devDependencies": {
-    "@types/micro": "^7.3.5",
+    "@types/micro": "^7.3.6",
     "@types/micro-cors": "^0.1.1",
     "@types/node": "^16.3.1",
     "@types/react": "^17.0.14",
